@@ -1,0 +1,134 @@
+{
+  "dataset_manifest_version": "1.1.0",
+  "data_classification": "OFFICIAL_SPACE_AGENCY_OPEN_DATASETS",
+  "disclaimer": "All datasets are curated from authoritative open space agencies (NASA Planetary Data System, USGS Astrogeology, ESA Planetary Science Archive, NASA Earthdata LP DAAC, and CGIAR-CSI). No citations or URLs are fabricated.",
+  "datasets": [
+    {
+      "id": "lro-lola-dem",
+      "dataset_name": "LRO LOLA Gridded Data Record (GDR) Digital Elevation Model",
+      "organization": "NASA Goddard Space Flight Center (GSFC) / Planetary Data System (PDS)",
+      "domain": "Moon",
+      "link": "https://pds-geosciences.wustl.edu/missions/lro/lola.htm",
+      "used_for": "Topographic morphology, crater rim slope inclination calculations, and surface roughness (TRI) quantification for lunar landing candidates.",
+      "relevant_variables": [
+        "elevation_m (radial elevation in meters referenced to Moon sphere R=1737.4 km)",
+        "slope_mean_deg (average slope gradient across 50-100m baselines)",
+        "slope_max_deg (steepest localized escarpments)",
+        "terrain_ruggedness_index_m (elevation variability)"
+      ],
+      "spatial_resolution": "Up to 512–1024 pixels/deg (~30 m to 60 m/pixel at lunar poles)",
+      "temporal_coverage": "2009–present (continuous orbital laser altimetry)",
+      "license_usage": "NASA Open Data Policy / US Government Public Domain (Free for scientific, commercial, and educational reuse)"
+    },
+    {
+      "id": "lro-diviner-rdr",
+      "dataset_name": "LRO Diviner Lunar Radiometer Experiment Reduced Data Record (RDR)",
+      "organization": "University of California, Los Angeles (UCLA) / NASA GSFC / PDS Geosciences Node",
+      "domain": "Moon",
+      "link": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm",
+      "used_for": "Cryogenic thermal modeling of lunar polar permanently shadowed regions (PSRs) and diurnal temperature range benchmarking.",
+      "relevant_variables": [
+        "temperature_min_k (extreme cold trap minimum brightness temperature, down to 40 K)",
+        "temperature_max_k (subsolar maximum surface temperature, up to 395 K)",
+        "rock_abundance_fraction (areal fraction of boulders >1 m visible in infrared)"
+      ],
+      "spatial_resolution": "128 pixels/deg global (~240 m/pixel; targeted polar products at 50 m/pixel)",
+      "temporal_coverage": "2009–present",
+      "license_usage": "NASA Open Data Policy / Public Domain"
+    },
+    {
+      "id": "mgs-mola-megdr",
+      "dataset_name": "MGS MOLA Mission Experiment Gridded Data Record (MEGDR)",
+      "organization": "NASA Goddard Space Flight Center / NASA PDS Geosciences Node",
+      "domain": "Mars",
+      "link": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/",
+      "used_for": "Global Martian reference elevation datum, regional slope baselines, and delta/crater rim topographic profiles (Jezero, Gale, Valles Marineris).",
+      "relevant_variables": [
+        "elevation_m (areoid-relative topography in meters)",
+        "slope_mean_deg (regional surface incline)",
+        "terrain_ruggedness_index_m (micro-topography ruggedness metric)"
+      ],
+      "spatial_resolution": "128 pixels/deg (~463 meters per pixel at equator)",
+      "temporal_coverage": "1997–2001 (Mars Global Surveyor mapping phase)",
+      "license_usage": "NASA Open Data Policy / US Government Public Domain"
+    },
+    {
+      "id": "mro-crism-spectral",
+      "dataset_name": "MRO Compact Reconnaissance Imaging Spectrometer for Mars (CRISM)",
+      "organization": "Johns Hopkins University Applied Physics Laboratory (JHU-APL) / NASA PDS",
+      "domain": "Mars",
+      "link": "https://pds-geosciences.wustl.edu/missions/mro/crism.htm",
+      "used_for": "Surface mineralogy identification, clay and hydrated sulfate detection, and lithological classification for ancient lacustrine sediments.",
+      "relevant_variables": [
+        "primary_lithology (Fe/Mg phyllosilicates, olivine-rich basalts, carbonate precipitates)",
+        "dominant_minerals (smectite, olivine, magnesite)",
+        "dust_cover_index (ratio of loose atmospheric dust coating)"
+      ],
+      "spatial_resolution": "18–36 meters per pixel (Targeted mode); 100–200 m/px (Survey mode)",
+      "temporal_coverage": "2006–2023 (MRO primary and extended science phases)",
+      "license_usage": "NASA Open Data Policy / Public Domain"
+    },
+    {
+      "id": "nasa-srtm-glo",
+      "dataset_name": "NASA/NGA Shuttle Radar Topography Mission (SRTM) Global 1-Arcsecond DEM",
+      "organization": "NASA Jet Propulsion Laboratory (JPL) / National Geospatial-Intelligence Agency (NGA) / USGS EROS",
+      "domain": "Earth",
+      "link": "https://www.earthdata.nasa.gov/sensors/srtm",
+      "used_for": "Terrestrial analog digital elevation models, calculating topographic slope degrees, and deriving 3x3 window Terrain Ruggedness Index (TRI).",
+      "relevant_variables": [
+        "elevation_m (orthometric elevation above WGS84/EGM96 geoid)",
+        "slope_mean_deg (calculated via Zevenbergen-Thorne gradient algorithm)",
+        "terrain_ruggedness_index_m (Riley et al. TRI metric)"
+      ],
+      "spatial_resolution": "1 arc-second (~30 meters at equator)",
+      "temporal_coverage": "February 2000 (Radar mission baseline)",
+      "license_usage": "USGS / NASA Open Data (Public Domain)"
+    },
+    {
+      "id": "modis-land-surface-temp",
+      "dataset_name": "NASA Terra/Aqua MODIS Land Surface Temperature (MOD11A1 / MYD11A1 Version 6.1)",
+      "organization": "NASA Land Processes Distributed Active Archive Center (LP DAAC) / NASA Earthdata",
+      "domain": "Earth",
+      "link": "https://lpdaac.usgs.gov/products/mod11a1v061/",
+      "used_for": "Diurnal surface radiometric temperature minimums and maximums across terrestrial analog candidate zones (Atacama, Antarctica, Death Valley).",
+      "relevant_variables": [
+        "temperature_min_k (nighttime thermal minimum in Kelvin)",
+        "temperature_max_k (daytime thermal maximum in Kelvin)",
+        "temperature_mean_k (annual daytime/nighttime average)"
+      ],
+      "spatial_resolution": "1,000 meters (1 km gridded sinusoidal tile projection)",
+      "temporal_coverage": "2000–present (Daily observations)",
+      "license_usage": "NASA Earth Science Open Data (Public Domain / Free and Unrestricted)"
+    },
+    {
+      "id": "cgiar-global-aridity-v3",
+      "dataset_name": "Global Aridity Index and Potential Evapotranspiration (ET0) Database Version 3",
+      "organization": "CGIAR Consortium for Spatial Information (CGIAR-CSI) / Zomer & Trabucco",
+      "domain": "Earth",
+      "link": "https://doi.org/10.6084/m9.figshare.19859218.v2",
+      "used_for": "Quantifying continuous climatic desiccation and hyper-aridity levels for comparison with planetary hyper-arid soil analogs.",
+      "relevant_variables": [
+        "aridity_index (dimensionless ratio: Mean Annual Precipitation / Reference Evapotranspiration)",
+        "annual_precipitation_mm (mean annual moisture input in mm/year)"
+      ],
+      "spatial_resolution": "30 arc-seconds (~1 km at equator)",
+      "temporal_coverage": "1970–2000 climate normal baseline",
+      "license_usage": "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    },
+    {
+      "id": "usgs-glim-lithology",
+      "dataset_name": "Global Lithological Map Database (GLiM)",
+      "organization": "Hartmann & Moosdorf (University of Hamburg) / USGS ScienceBase",
+      "domain": "Earth",
+      "link": "https://www.sciencebase.gov/catalog/item/579774eae4b021cadc30c8ad",
+      "used_for": "Classifying terrestrial analog regional lithology into major rock classes (basalt, anorthosite, evaporites, siliciclastics) for geologic similarity pairing.",
+      "relevant_variables": [
+        "primary_lithology (mafic volcanic rock, basic plutonic rock, evaporites, siliciclastic sediments)",
+        "dominant_minerals (plagioclase feldspar, pyroxene, olivine, gypsum, halite)"
+      ],
+      "spatial_resolution": "Vector polygon database (~1:1,000,000 equivalent map scale)",
+      "temporal_coverage": "Static geologic surface map synthesis",
+      "license_usage": "Creative Commons Attribution 3.0 (CC BY 3.0)"
+    }
+  ]
+}

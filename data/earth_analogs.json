@@ -1,0 +1,233 @@
+[
+  {
+    "id": "atacama-yungay",
+    "name": "Atacama Desert (Yungay Basin)",
+    "country": "Chile",
+    "latitude": -24.05,
+    "longitude": -69.85,
+    "terrain": "Hyper-arid desert plateau and salar flats",
+    "slope": "2° - 8° (Gentle plateau slopes)",
+    "temperature": "-2°C to 38°C (Extreme diurnal cycling)",
+    "geology": "Nitrate-perchlorate evaporite crusts, volcanic ignimbrites, hyper-desiccated clay",
+    "aridity": "Hyper-arid (<1 mm annual precipitation)",
+    "surface_conditions": "Fine oxidized dust, gypsum hardpans, high solar UV irradiance",
+    "analog_score": 94,
+    "recommended_missions": [
+      "Astrobiology Life-Detection Instrumentation",
+      "Perchlorate Chemical Sensor Calibration",
+      "Mars Surface Regolith Drill Testing"
+    ],
+    "explanation": "DEMO DATA: Represents hyper-arid, oxidized soils and high UV flux comparable to dry Martian basins and ancient lacustrine sediments like Jezero Crater.",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "mcmurdo-dry-valleys",
+    "name": "McMurdo Dry Valleys",
+    "country": "Antarctica",
+    "latitude": -77.50,
+    "longitude": 162.00,
+    "terrain": "Polar cold desert valley with permafrost",
+    "slope": "5° - 25° (Steep glacial valley walls)",
+    "temperature": "-50°C to 0°C (Perennially sub-zero)",
+    "geology": "Patterned permafrost ground, cryogenic salts, sandstone and dolerite bedrock",
+    "aridity": "Hyper-arid polar desert (katabatic wind desiccation)",
+    "surface_conditions": "Snow-free frozen regolith, gravel lag deposits, ice-cemented permafrost",
+    "analog_score": 93,
+    "recommended_missions": [
+      "Cryogenic Volatiles Extraction Drills",
+      "Lunar South Pole Cold Trap Operations",
+      "Subsurface Thermal Insulation Validation"
+    ],
+    "explanation": "DEMO DATA: Models cryogenic soil dynamics, absence of liquid water, and extreme sub-zero thermal stresses characteristic of Lunar South Pole cold traps (PSRs).",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "devon-haughton-crater",
+    "name": "Devon Island (Haughton Impact Crater)",
+    "country": "Canada",
+    "latitude": 75.38,
+    "longitude": -89.78,
+    "terrain": "Impact crater floor, peak-ring breccia, and periglacial valleys",
+    "slope": "4° - 32° (Crater rim scarps and ejecta slopes)",
+    "temperature": "-40°C to 10°C (High-Arctic polar climate)",
+    "geology": "Impact breccia, hydrothermal paleospring deposits, shatter cones, dolomite bedrock",
+    "aridity": "Arid Arctic polar desert",
+    "surface_conditions": "Angular shatter blocks, frost-shattered scree, degraded paleolake beds",
+    "analog_score": 91,
+    "recommended_missions": [
+      "Rover Mobility on Crater Topography",
+      "Astronaut EVA Navigation and Geologic Traverse Drills",
+      "Autonomous Long-Range Field Operations"
+    ],
+    "explanation": "DEMO DATA: Features a preserved 23-km impact structure with breccia blankets, serving as a topological testbed for lunar and Martian impact craters.",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "lanzarote-timanfaya",
+    "name": "Lanzarote Volcanic Fields & Tubes",
+    "country": "Spain",
+    "latitude": 29.03,
+    "longitude": -13.71,
+    "terrain": "Pristine basaltic 'a'a and pahoehoe lava flows and collapse pits",
+    "slope": "3° - 18° (Volcanic cinder slopes and collapse pits)",
+    "temperature": "14°C to 30°C (Moderate arid subtropical)",
+    "geology": "Tholeiitic and alkali olivine basalts, volcanic hornitos, pristine lava tubes",
+    "aridity": "Arid to semi-arid maritime desert",
+    "surface_conditions": "Abrasive vesicular basalt, unweathered volcanic glass crusts, cave skylights",
+    "analog_score": 95,
+    "recommended_missions": [
+      "Lava Tube Subsurface Habitat Pressurization",
+      "Robotic Drone Ingress into Skylights",
+      "Basalt ISRU Sintering and 3D Construction Trials"
+    ],
+    "explanation": "DEMO DATA: Uncollapsed subterranean volcanic conduits and unweathered basalt fields provide structural analogs to lunar mare lava tubes and Marius Hills skylights.",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "hi-seas-mauna-loa",
+    "name": "Mauna Loa (HI-SEAS Station)",
+    "country": "United States",
+    "latitude": 19.53,
+    "longitude": -155.57,
+    "terrain": "High-altitude basalt shield volcano dome",
+    "slope": "6° - 22° (Moderate to steep volcanic slopes)",
+    "temperature": "-2°C to 22°C (High elevation alpine)",
+    "geology": "Layered basalt shield lavas, pahoehoe corded ropes, cinder cones",
+    "aridity": "Semi-arid high-altitude alpine",
+    "surface_conditions": "Loose basalt cinder, rough lava fields, low vegetative cover",
+    "analog_score": 90,
+    "recommended_missions": [
+      "Crew Isolation and ECLSS Life-Support Stress Tests",
+      "Space Suit Ergonomics and Joint Seal Abrasion",
+      "Field Communications Uplink Delay Trials"
+    ],
+    "explanation": "DEMO DATA: Isolated high-altitude shield volcano environment suitable for crew operational autonomy, dust mitigation, and habitat life-support engineering.",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "svalbard-spitsbergen",
+    "name": "Svalbard (Bockfjorden / AMASE Site)",
+    "country": "Norway",
+    "latitude": 78.22,
+    "longitude": 15.65,
+    "terrain": "Arctic volcanic complex and glaciated moraines",
+    "slope": "5° - 28° (Glacial moraines and scree slopes)",
+    "temperature": "-25°C to 8°C (High Arctic tundra)",
+    "geology": "Volcanic cones, carbonate globules, permafrost, mantle xenoliths",
+    "aridity": "Cold Arctic desert",
+    "surface_conditions": "Fractured permafrost bedrock, patterned gravel polygons, glacial outwash",
+    "analog_score": 88,
+    "recommended_missions": [
+      "Sub-ice Core Drilling & Cryosphere Caching",
+      "Methane Vent and Carbonate Detection",
+      "Cold-tolerant Autonomous Robotics Validation"
+    ],
+    "explanation": "DEMO DATA: Volcanic-glacial interactions and unique carbonate mineral precipitates structurally analogous to mineral signatures observed in Martian meteorites.",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "wadi-rum-valley",
+    "name": "Wadi Rum (Valley of the Moon)",
+    "country": "Jordan",
+    "latitude": 29.58,
+    "longitude": 35.43,
+    "terrain": "Deep sandstone canyons, inselbergs, and sand dunes",
+    "slope": "1° - 45° (Flat desert canyon floors to sheer sandstone cliffs)",
+    "temperature": "2°C to 42°C (Arid continental desert)",
+    "geology": "Iron-oxide enriched quartz sandstones, granite basement bedrock, aeolian sands",
+    "aridity": "Hyper-arid desert (<50 mm annual precipitation)",
+    "surface_conditions": "Fine reddish sand dunes, hard bedrock pavements, steep canyon walls",
+    "analog_score": 87,
+    "recommended_missions": [
+      "Rover Wheel Traction & Sand Dune Traversability",
+      "Optical SLAM Navigation in Iron-Oxide Landscapes",
+      "High-Heat Thermal Cycling on Mechanical Joints"
+    ],
+    "explanation": "DEMO DATA: Red iron-oxide sandstone morphology and sandy canyon floors replicate Martian canyon landscapes like Valles Marineris for autonomous rover navigation.",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "cueva-de-los-verdes",
+    "name": "Corona Volcanic Cave System",
+    "country": "Spain",
+    "latitude": 29.15,
+    "longitude": -13.43,
+    "terrain": "Subterranean multi-level volcanic lava tube network",
+    "slope": "0° - 15° (Subterranean corridor floors with collapse steps)",
+    "temperature": "18°C constant (Thermally buffered subterranean environment)",
+    "geology": "Layered basaltic roof ceilings, lateral lava benches, pyrometasomatic minerals",
+    "aridity": "Arid subterranean microclimate",
+    "surface_conditions": "Enclosed dark basalt chambers, cave-ins, no solar illumination",
+    "analog_score": 92,
+    "recommended_missions": [
+      "Subsurface Radiation-Shielded Base Architecture",
+      "GPS-Denied Autonomous LIDAR Drone Exploration",
+      "Underground Wireless Mesh Relays and Sensor Networks"
+    ],
+    "explanation": "DEMO DATA: A 6-km subterranean volcanic tube offering realistic conditions for testing human habitation concepts protected from cosmic radiation and meteoroids.",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "mojave-pisgah",
+    "name": "Mojave Desert (Pisgah Crater)",
+    "country": "United States",
+    "latitude": 34.75,
+    "longitude": -116.38,
+    "terrain": "Basaltic volcanic cinder cone and surrounding lava field",
+    "slope": "4° - 35° (Steep scoria cinder cone flanks)",
+    "temperature": "-4°C to 44°C (Arid desert extremes)",
+    "geology": "Porphyritic basalt, pahoehoe lava flows, vesicular scoria cinder",
+    "aridity": "Arid Mojave desert (<100 mm annual precipitation)",
+    "surface_conditions": "Rough basalt clinkers, abrasive volcanic cinders, dry desert pavement",
+    "analog_score": 82,
+    "recommended_missions": [
+      "Steep Slope Rover Traction & Tipping Analysis",
+      "Abrasive Cinder Regolith Wear on Rover Wheels",
+      "Dust Penetration Testing on Seals and Gaskets"
+    ],
+    "explanation": "DEMO DATA: Highly abrasive cinder and basalt flows mimic young volcanic plains on the Moon and Mars for chassis traction and dust barrier testing.",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "iceland-askja",
+    "name": "Askja Caldera & Holuhraun",
+    "country": "Iceland",
+    "latitude": 65.03,
+    "longitude": -16.75,
+    "terrain": "High volcanic plateau, caldera lake, and extensive flood basalts",
+    "slope": "2° - 20° (High plateau and caldera walls)",
+    "temperature": "-20°C to 12°C (Sub-Arctic volcanic highland)",
+    "geology": "Flood basalts, hyaloclastites, pumice fields, geothermal fissure vents",
+    "aridity": "Arid to semi-arid volcanic cold desert",
+    "surface_conditions": "Fresh unweathered black basalt plains, pumice scree, snow-interbedded volcanic ash",
+    "analog_score": 89,
+    "recommended_missions": [
+      "Astronaut Geological Field Sampling Protocols",
+      "Geothermal Power & Subsurface Heat Flow Probes",
+      "Autonomous Multi-Rover Collaborative Mapping"
+    ],
+    "explanation": "DEMO DATA: Historic training ground for lunar geology due to vast unweathered basalt flows, caldera geometry, and sparse vegetation.",
+    "dataset_type": "prototype_demo_data"
+  },
+  {
+    "id": "danakil-depression",
+    "name": "Danakil Depression (Dallol Geothermal Area)",
+    "country": "Ethiopia",
+    "latitude": 14.24,
+    "longitude": 40.30,
+    "terrain": "Rift valley basin 120m below sea level with hydrothermal domes",
+    "slope": "1° - 10° (Flat salt pans with hydrothermal chimneys)",
+    "temperature": "25°C to 50°C (Hottest inhabited place on Earth)",
+    "geology": "Hypersaline halite evaporites, sulfur chimneys, iron-rich hydrothermal springs",
+    "aridity": "Hyper-arid desert (<100 mm precipitation)",
+    "surface_conditions": "Acidic salt crusts, toxic geothermal gases, hydrothermal brine pools",
+    "analog_score": 85,
+    "recommended_missions": [
+      "Extreme Environment Robotics and Corrosion Testing",
+      "Hydrothermal Extremophile Biosignature Probing",
+      "Extreme Thermal Stress Testing on Electronics"
+    ],
+    "explanation": "DEMO DATA: Hypersaline, acidic hydrothermal pools and sulfur-rich deposits simulate extreme geochemical niches that could have hosted life on early Mars.",
+    "dataset_type": "prototype_demo_data"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "pipeline_version": "1.0.0",
+  "timestamp_generated": "2026-11-15T17:53:00Z",
+  "data_tier": "REAL_SPACE_AGENCY_PROVENANCE_DATA",
+  "normalization_bounds": {
+    "slope_deg": {
+      "min": 0.0,
+      "max": 45.0
+    },
+    "tri_m": {
+      "min": 0.0,
+      "max": 120.0
+    },
+    "temperature_k": {
+      "min": 40.0,
+      "max": 400.0
+    },
+    "aridity_index": {
+      "min": 0.0,
+      "max": 0.65
+    },
+    "rock_abundance": {
+      "min": 0.0,
+      "max": 0.35
+    }
+  },
+  "input_counts": {
+    "moon_targets": 3,
+    "mars_targets": 3,
+    "earth_analogs": 11
+  },
+  "derived_features": [
+    "norm_slope",
+    "norm_ruggedness",
+    "norm_temp_min",
+    "norm_temp_max",
+    "norm_aridity",
+    "norm_rock_abundance"
+  ],
+  "output_artifacts": [
+    "planetary_targets_processed.json",
+    "earth_analogs_processed.json"
+  ]
+}

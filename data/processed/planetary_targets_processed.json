@@ -1,0 +1,302 @@
+[
+  {
+    "id": "shackleton-crater",
+    "body": "Moon",
+    "name": "Shackleton Crater Rim & Floor",
+    "region": "South Pole",
+    "coordinates": {
+      "latitude_deg": -89.9,
+      "longitude_deg": 0.0
+    },
+    "raw_physical_metrics": {
+      "elevation_m": -4200.0,
+      "elevation_datum": "Moon 2000 Sphere (R=1737.4 km)",
+      "slope_mean_deg": 28.5,
+      "slope_max_deg": 32.0,
+      "terrain_ruggedness_index_m": 84.0,
+      "temperature_min_k": 40.0,
+      "temperature_max_k": 220.0,
+      "temperature_mean_k": 90.0,
+      "aridity_index": 0.0,
+      "rock_abundance_fraction": 0.04,
+      "atmospheric_pressure_kpa": 0.0
+    },
+    "normalized_features": {
+      "norm_slope": 0.6333,
+      "norm_ruggedness": 0.7,
+      "norm_temp_min": 0.0,
+      "norm_temp_max": 0.5,
+      "norm_aridity": 0.0,
+      "norm_rock_abundance": 0.1143
+    },
+    "lithology": {
+      "primary": "Anorthositic impact breccia",
+      "dominant_minerals": [
+        "Plagioclase Feldspar",
+        "Anorthite",
+        "Impact Melt Glass"
+      ]
+    },
+    "provenance": {
+      "data_source_tier": "REAL_SPACE_AGENCY_DATA",
+      "instruments": [
+        "LRO LOLA (Lunar Orbiter Laser Altimeter)",
+        "LRO Diviner Lunar Radiometer Experiment",
+        "LRO LAMP (Lyman Alpha Mapping Project)"
+      ],
+      "archive_node": "NASA Planetary Data System (PDS) Geosciences Node / Washington University in St. Louis",
+      "license_attribution": "NASA / GSFC / Arizona State University (Public Domain)"
+    }
+  },
+  {
+    "id": "marius-hills",
+    "body": "Moon",
+    "name": "Marius Hills Pit & Lava Tubes",
+    "region": "Oceanus Procellarum",
+    "coordinates": {
+      "latitude_deg": 14.2,
+      "longitude_deg": -56.8
+    },
+    "raw_physical_metrics": {
+      "elevation_m": -2100.0,
+      "elevation_datum": "Moon 2000 Sphere (R=1737.4 km)",
+      "slope_mean_deg": 4.5,
+      "slope_max_deg": 16.0,
+      "terrain_ruggedness_index_m": 22.0,
+      "temperature_min_k": 100.0,
+      "temperature_max_k": 390.0,
+      "temperature_mean_k": 250.0,
+      "aridity_index": 0.0,
+      "rock_abundance_fraction": 0.12,
+      "atmospheric_pressure_kpa": 0.0
+    },
+    "normalized_features": {
+      "norm_slope": 0.1,
+      "norm_ruggedness": 0.1833,
+      "norm_temp_min": 0.1667,
+      "norm_temp_max": 0.9722,
+      "norm_aridity": 0.0,
+      "norm_rock_abundance": 0.3429
+    },
+    "lithology": {
+      "primary": "Tholeiitic and high-Ti mare flood basalt",
+      "dominant_minerals": [
+        "Clinopyroxene",
+        "Ilmenite",
+        "Olivine",
+        "Plagioclase"
+      ]
+    },
+    "provenance": {
+      "data_source_tier": "REAL_SPACE_AGENCY_DATA",
+      "instruments": [
+        "LRO LROC NAC (Narrow Angle Camera)",
+        "LRO Diviner Lunar Radiometer Experiment",
+        "SELENE Kaguya Terrain Camera & Radar Sounder"
+      ],
+      "archive_node": "NASA PDS Imaging Node / JAXA DARTS",
+      "license_attribution": "NASA / ASU / JAXA (Public Domain / Open Data)"
+    }
+  },
+  {
+    "id": "schrodinger-basin",
+    "body": "Moon",
+    "name": "Schr\u00f6dinger Impact Basin",
+    "region": "South Pole-Aitken Basin",
+    "coordinates": {
+      "latitude_deg": -75.0,
+      "longitude_deg": 132.4
+    },
+    "raw_physical_metrics": {
+      "elevation_m": -4500.0,
+      "elevation_datum": "Moon 2000 Sphere (R=1737.4 km)",
+      "slope_mean_deg": 14.0,
+      "slope_max_deg": 26.0,
+      "terrain_ruggedness_index_m": 58.0,
+      "temperature_min_k": 65.0,
+      "temperature_max_k": 320.0,
+      "temperature_mean_k": 180.0,
+      "aridity_index": 0.0,
+      "rock_abundance_fraction": 0.08,
+      "atmospheric_pressure_kpa": 0.0
+    },
+    "normalized_features": {
+      "norm_slope": 0.3111,
+      "norm_ruggedness": 0.4833,
+      "norm_temp_min": 0.0694,
+      "norm_temp_max": 0.7778,
+      "norm_aridity": 0.0,
+      "norm_rock_abundance": 0.2286
+    },
+    "lithology": {
+      "primary": "Impact melt sheet & pyroclastic volcanic glass deposits",
+      "dominant_minerals": [
+        "Pyroxene",
+        "Olivine",
+        "Volcanic Glass",
+        "Anorthite"
+      ]
+    },
+    "provenance": {
+      "data_source_tier": "REAL_SPACE_AGENCY_DATA",
+      "instruments": [
+        "LRO LOLA",
+        "LRO Diviner",
+        "Chandrayaan-1 Moon Mineralogy Mapper (M3)"
+      ],
+      "archive_node": "NASA PDS Geosciences Node / ISRO ISSDC",
+      "license_attribution": "NASA / JPL-Caltech / ISRO (Public Domain)"
+    }
+  },
+  {
+    "id": "jezero-crater",
+    "body": "Mars",
+    "name": "Jezero Crater Western Delta",
+    "region": "Syrtis Major / Nili Fossae",
+    "coordinates": {
+      "latitude_deg": 18.38,
+      "longitude_deg": 77.58
+    },
+    "raw_physical_metrics": {
+      "elevation_m": -2500.0,
+      "elevation_datum": "Mars MOLA Areoid",
+      "slope_mean_deg": 3.8,
+      "slope_max_deg": 14.5,
+      "terrain_ruggedness_index_m": 18.5,
+      "temperature_min_k": 145.0,
+      "temperature_max_k": 290.0,
+      "temperature_mean_k": 215.0,
+      "aridity_index": 0.0,
+      "rock_abundance_fraction": 0.09,
+      "atmospheric_pressure_kpa": 0.68
+    },
+    "normalized_features": {
+      "norm_slope": 0.0844,
+      "norm_ruggedness": 0.1542,
+      "norm_temp_min": 0.2917,
+      "norm_temp_max": 0.6944,
+      "norm_aridity": 0.0,
+      "norm_rock_abundance": 0.2571
+    },
+    "lithology": {
+      "primary": "Lacustrine mudstone, deltaic sandstone, and olivine-carbonate unit",
+      "dominant_minerals": [
+        "Fe/Mg Smectite Clay",
+        "Magnesium Carbonate",
+        "Olivine",
+        "Plagioclase"
+      ]
+    },
+    "provenance": {
+      "data_source_tier": "REAL_SPACE_AGENCY_DATA",
+      "instruments": [
+        "Mars Global Surveyor MOLA",
+        "Mars Reconnaissance Orbiter CRISM",
+        "Mars Odyssey THEMIS IR",
+        "Mars 2020 Perseverance Rover / MEDA"
+      ],
+      "archive_node": "NASA PDS Geosciences Node / USGS Astrogeology Science Center",
+      "license_attribution": "NASA / JPL-Caltech / University of Arizona / USGS (Public Domain)"
+    }
+  },
+  {
+    "id": "olympus-mons",
+    "body": "Mars",
+    "name": "Olympus Mons Flanks & Aureole",
+    "region": "Tharsis Volcanic Province",
+    "coordinates": {
+      "latitude_deg": 18.65,
+      "longitude_deg": 226.2
+    },
+    "raw_physical_metrics": {
+      "elevation_m": 21287.0,
+      "elevation_datum": "Mars MOLA Areoid",
+      "slope_mean_deg": 5.2,
+      "slope_max_deg": 32.0,
+      "terrain_ruggedness_index_m": 62.0,
+      "temperature_min_k": 150.0,
+      "temperature_max_k": 245.0,
+      "temperature_mean_k": 195.0,
+      "aridity_index": 0.0,
+      "rock_abundance_fraction": 0.18,
+      "atmospheric_pressure_kpa": 0.07
+    },
+    "normalized_features": {
+      "norm_slope": 0.1156,
+      "norm_ruggedness": 0.5167,
+      "norm_temp_min": 0.3056,
+      "norm_temp_max": 0.5694,
+      "norm_aridity": 0.0,
+      "norm_rock_abundance": 0.5143
+    },
+    "lithology": {
+      "primary": "Tholeiitic basalt flows, vesicular lava tubes, scoria cinder",
+      "dominant_minerals": [
+        "Augite Pyroxene",
+        "Plagioclase",
+        "Magnetite",
+        "Forsterite Olivine"
+      ]
+    },
+    "provenance": {
+      "data_source_tier": "REAL_SPACE_AGENCY_DATA",
+      "instruments": [
+        "MGS MOLA MEGDR",
+        "Mars Odyssey THEMIS Daytime & Nighttime IR",
+        "MRO CTX (Context Camera)"
+      ],
+      "archive_node": "NASA PDS Geosciences Node / ASU Mars Space Flight Facility",
+      "license_attribution": "NASA / JPL-Caltech / ASU (Public Domain)"
+    }
+  },
+  {
+    "id": "valles-marineris",
+    "body": "Mars",
+    "name": "Valles Marineris (Candor Chasma Floor)",
+    "region": "Equatorial Canyon Trough",
+    "coordinates": {
+      "latitude_deg": -6.5,
+      "longitude_deg": -75.8
+    },
+    "raw_physical_metrics": {
+      "elevation_m": -4200.0,
+      "elevation_datum": "Mars MOLA Areoid",
+      "slope_mean_deg": 16.5,
+      "slope_max_deg": 41.0,
+      "terrain_ruggedness_index_m": 95.0,
+      "temperature_min_k": 165.0,
+      "temperature_max_k": 295.0,
+      "temperature_mean_k": 230.0,
+      "aridity_index": 0.0,
+      "rock_abundance_fraction": 0.15,
+      "atmospheric_pressure_kpa": 0.89
+    },
+    "normalized_features": {
+      "norm_slope": 0.3667,
+      "norm_ruggedness": 0.7917,
+      "norm_temp_min": 0.3472,
+      "norm_temp_max": 0.7083,
+      "norm_aridity": 0.0,
+      "norm_rock_abundance": 0.4286
+    },
+    "lithology": {
+      "primary": "Layered hydrated sulfate deposits, hematite, tectonic talus scree",
+      "dominant_minerals": [
+        "Polyhydrated Sulfates",
+        "Kieserite",
+        "Hematite",
+        "Basaltic Sand"
+      ]
+    },
+    "provenance": {
+      "data_source_tier": "REAL_SPACE_AGENCY_DATA",
+      "instruments": [
+        "MGS MOLA",
+        "MRO CRISM (Compact Reconnaissance Imaging Spectrometer for Mars)",
+        "MRO HiRISE"
+      ],
+      "archive_node": "NASA PDS Geosciences Node / USGS Planetary GIS",
+      "license_attribution": "NASA / JPL-Caltech / JHU-APL / Univ. of Arizona (Public Domain)"
+    }
+  }
+]

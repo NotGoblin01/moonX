@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoonBase Planner — Planetary Analog Finder for Moon & Mars</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="css/homepage.css">
+</head>
+<body>
+
+  <!-- Starfield Canvas -->
+  <canvas id="starfield"></canvas>
+
+  <!-- 1. Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-glyph">🪐</div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">MoonBase Planner</span>
+          <span class="brand-badge">Planetary Analog Explorer</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#concept">Mission Concept</a></li>
+          <li><a href="#features">Environments</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="about.html">Methodology</a></li>
+          <li><a href="explorer.html" class="nav-cta">Explore Analogs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Text Content -->
+        <div class="hero-text-content">
+          <div class="hero-tag">
+            <span>🚀 Space Mission Preparation</span>
+          </div>
+          
+          <h1 class="hero-title">
+            MoonBase <span class="gradient-text">Planner</span>
+          </h1>
+          
+          <div class="hero-subtitle">
+            Planetary Analog Finder for Moon &amp; Mars
+          </div>
+
+          <p class="hero-description">
+            Discover Earth environments that can help prepare us for future missions to the Moon and Mars. Connect extraterrestrial landing sites with terrestrial testbeds to validate habitats, rovers, and life-support operations before launch.
+          </p>
+
+          <div class="hero-actions">
+            <a href="explorer.html" class="btn btn-primary">
+              <span>Explore Earth Analogs</span>
+              <span>→</span>
+            </a>
+            <a href="#concept" class="btn btn-secondary">
+              <span>How Analogs Work</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Large Moon / Earth / Mars Visual System -->
+        <div class="hero-visual-col">
+          <div class="planetary-visual-container">
+            <div class="orbital-ring ring-outer"></div>
+            <div class="orbital-ring ring-inner"></div>
+
+            <!-- Moon Sphere -->
+            <div class="celestial-body body-moon" title="The Moon - Polar Volatiles & Lava Tubes">
+              <div class="body-label">The Moon</div>
+            </div>
+
+            <!-- Earth Sphere -->
+            <div class="celestial-body body-earth" title="Earth - Terrestrial Planetary Analogs">
+              <div class="body-label">Earth (Analogs)</div>
+            </div>
+
+            <!-- Mars Sphere -->
+            <div class="celestial-body body-mars" title="Mars - Ancient Deltas & Volcanic Shields">
+              <div class="body-label">Mars</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Mission Concept Section -->
+  <section id="concept" class="concept-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Scientific Methodology</span>
+        <h2 class="section-title">The Planetary Analog Pipeline</h2>
+        <p class="section-desc">
+          Rigorous science-first methodology translating remote planetary observations into actionable Earth-based simulation campaigns.
+        </p>
+      </div>
+
+      <!-- Pipeline Flow: Moon/Mars data → Feature analysis → Earth comparison → Analog score → Mission application -->
+      <div class="pipeline-flow">
+        
+        <div class="pipeline-step">
+          <div class="step-num">STAGE 01</div>
+          <div class="step-icon">📡</div>
+          <div class="step-title">Moon/Mars Data</div>
+          <div class="step-desc">Orbital imagery, spectrometer measurements, elevation maps, and thermal data from target planetary bodies.</div>
+        </div>
+
+        <div class="pipeline-connector">→</div>
+
+        <div class="pipeline-step">
+          <div class="step-num">STAGE 02</div>
+          <div class="step-icon">🔬</div>
+          <div class="step-title">Feature Analysis</div>
+          <div class="step-desc">Quantifying geomorphology, regolith mineralogy, cryogenic cold traps, volcanic tubes, and radiation environments.</div>
+        </div>
+
+        <div class="pipeline-connector">→</div>
+
+        <div class="pipeline-step">
+          <div class="step-num">STAGE 03</div>
+          <div class="step-icon">🌍</div>
+          <div class="step-title">Earth Comparison</div>
+          <div class="step-desc">Scanning global terrestrial analog inventories—polar deserts, lava tubes, high-altitude volcanoes, and hyper-arid basins.</div>
+        </div>
+
+        <div class="pipeline-connector">→</div>
+
+        <div class="pipeline-step">
+          <div class="step-num">STAGE 04</div>
+          <div class="step-icon">📊</div>
+          <div class="step-title">Analog Score</div>
+          <div class="step-desc">Multi-criteria similarity scoring weighing physical, thermal, and chemical affinities between candidate sites.</div>
+        </div>
+
+        <div class="pipeline-connector">→</div>
+
+        <div class="pipeline-step">
+          <div class="step-num">STAGE 05</div>
+          <div class="step-icon">🚀</div>
+          <div class="step-title">Mission Application</div>
+          <div class="step-desc">Targeted deployment of rover chassis, drill prototypes, EVA suit ergonomics, and crew isolation simulation drills.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Three Feature Cards -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Target Environments & Testbeds</span>
+        <h2 class="section-title">Core Research Domains</h2>
+        <p class="section-desc">
+          Structured comparative intelligence across lunar craters, Martian terrain, and Earth's most extreme geological analogs.
+        </p>
+      </div>
+
+      <div class="feature-cards-grid">
+        
+        <!-- Card 1: Moon Analysis -->
+        <div class="feature-card moon-card">
+          <div class="feature-header">
+            <div class="feature-icon-wrapper">🌙</div>
+            <div>
+              <h3 class="feature-card-title">Moon Analysis</h3>
+              <span style="font-size: 0.78rem; color: var(--accent-moon); text-transform: uppercase;">South Pole &amp; Mare Basins</span>
+            </div>
+          </div>
+          <p class="feature-card-desc">
+            Evaluate high-priority lunar base candidates such as Shackleton Crater cold traps and the Marius Hills lava tube skylights for permanent human habitation.
+          </p>
+          <ul class="feature-list">
+            <li><span class="bullet">▸</span> Permanently Shadowed Regions (PSRs) &amp; volatile ice traps</li>
+            <li><span class="bullet">▸</span> Intact subterranean lava tube radiation shielding</li>
+            <li><span class="bullet">▸</span> Continuous solar illumination along high ridge rims</li>
+          </ul>
+          <a href="explorer.html" class="feature-btn-link">Analyze Moon Targets →</a>
+        </div>
+
+        <!-- Card 2: Mars Analysis -->
+        <div class="feature-card mars-card">
+          <div class="feature-header">
+            <div class="feature-icon-wrapper">🔴</div>
+            <div>
+              <h3 class="feature-card-title">Mars Analysis</h3>
+              <span style="font-size: 0.78rem; color: var(--accent-mars); text-transform: uppercase;">Astrobiology &amp; Volcanism</span>
+            </div>
+          </div>
+          <p class="feature-card-desc">
+            Model physical and chemical environments across ancient lacustrine delta systems like Jezero Crater and towering basalt flows on Olympus Mons.
+          </p>
+          <ul class="feature-list">
+            <li><span class="bullet">▸</span> Perchlorates, nitrate salts, and desiccated clay mineralogy</li>
+            <li><span class="bullet">▸</span> Paleolake sedimentary deposits and biosignature traps</li>
+            <li><span class="bullet">▸</span> Massive shield volcanism and thin-atmosphere radiation levels</li>
+          </ul>
+          <a href="explorer.html" class="feature-btn-link">Analyze Mars Targets →</a>
+        </div>
+
+        <!-- Card 3: Earth Analog Discovery -->
+        <div class="feature-card earth-card">
+          <div class="feature-header">
+            <div class="feature-icon-wrapper">🌍</div>
+            <div>
+              <h3 class="feature-card-title">Earth Analog Discovery</h3>
+              <span style="font-size: 0.78rem; color: var(--accent-earth); text-transform: uppercase;">Terrestrial Field Sites</span>
+            </div>
+          </div>
+          <p class="feature-card-desc">
+            Pinpoint accessible field locations worldwide matching planetary conditions to conduct realistic equipment tests, drill calibrations, and analog simulations.
+          </p>
+          <ul class="feature-list">
+            <li><span class="bullet">▸</span> Interactive global map powered by Leaflet.js</li>
+            <li><span class="bullet">▸</span> Objective similarity scoring and physical rationale</li>
+            <li><span class="bullet">▸</span> Cataloged field applications: rover mobility, ISRU, isolation</li>
+          </ul>
+          <a href="explorer.html" class="feature-btn-link">Discover Earth Sites →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. How It Works Section -->
+  <section id="how-it-works" class="how-it-works-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">System Architecture</span>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-desc">
+          Built on a modular and scalable open architecture engineered for progressive enhancement with machine learning models.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        
+        <div class="step-card">
+          <span class="step-badge">STEP 01</span>
+          <h4 class="step-heading">Select Target Region</h4>
+          <p class="step-body">
+            Users pick a Moon or Mars landing candidate from the indexed planetary database, inspecting its coordinates, temperature extremes, regolith characteristics, and illumination profiles.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-badge">STEP 02</span>
+          <h4 class="step-heading">Evaluate Environmental Drivers</h4>
+          <p class="step-body">
+            The platform breaks down the target into core comparative dimensions: cryospheric conditions, volcanism and lava tube geometry, geochemical mineralogy, and radiation exposure.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-badge">STEP 03</span>
+          <h4 class="step-heading">Calculate Similarity Scores</h4>
+          <p class="step-body">
+            The backend engine processes the target against global terrestrial sites, computing an analog similarity index that ranks the top Earth counterparts with verifiable scientific criteria.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-badge">STEP 04</span>
+          <h4 class="step-heading">Map Mission Applications</h4>
+          <p class="step-body">
+            Results are mapped interactively on Leaflet.js, highlighting each site's specific mission test value—from drill prototypes and rover wheel traction to long-duration human isolation trials.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Action Callout -->
+      <div class="cta-banner">
+        <h3>Ready to Explore Planetary Analogs?</h3>
+        <p>Launch the interactive mapping tool to query Moon and Mars target environments against Earth testbeds.</p>
+        <a href="explorer.html" class="btn btn-primary">
+          <span>Launch Analog Explorer</span>
+          <span>→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. Footer & About Section -->
+  <footer id="about" class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        
+        <div class="footer-brand">
+          <h4>MoonBase Planner</h4>
+          <p>
+            An open planetary analog intelligence platform helping mission planners, researchers, and space engineers identify optimal terrestrial testing grounds for Moon and Mars exploration.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#concept">Mission Concept</a></li>
+            <li><a href="#features">Environments</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="about.html">Methodology &amp; Data Sources</a></li>
+            <li><a href="explorer.html">Explore Earth Analogs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Open Data &amp; Research</h5>
+          <ul>
+            <li><a href="about.html#sources">NASA Planetary Data System (PDS)</a></li>
+            <li><a href="about.html#sources">LRO LOLA &amp; Diviner Experiments</a></li>
+            <li><a href="about.html#sources">Mars MOLA &amp; CRISM Instruments</a></li>
+            <li><a href="about.html#sources">USGS SRTM 30m Global DEM</a></li>
+            <li><a href="about.html#sources">CGIAR-CSI Global Aridity v3</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; MoonBase Planner — Planetary Analog Finder. Hackathon Open Science Initiative.</div>
+        <div>Designed for local development and scalable mission research.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/homepage.js"></script>
+</body>
+</html>

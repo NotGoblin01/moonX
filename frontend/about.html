@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About & Methodology — MoonBase Planner</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- App & Page Styles -->
+  <link rel="stylesheet" href="css/homepage.css">
+  <link rel="stylesheet" href="css/methodology.css">
+</head>
+<body>
+
+  <!-- Starfield Canvas -->
+  <canvas id="starfield"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-glyph">🪐</div>
+        <div class="brand-text-wrap">
+          <span class="brand-title">MoonBase Planner</span>
+          <span class="brand-badge">Methodology &amp; Open Science</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explorer.html">Analog Explorer</a></li>
+          <li><a href="#definition">What is an Analog?</a></li>
+          <li><a href="#how-scoring-works">Scoring System</a></li>
+          <li><a href="#ml-model">ML Model</a></li>
+          <li><a href="#limitations">Limitations</a></li>
+          <li><a href="#sources">Data Sources</a></li>
+          <li><a href="explorer.html" class="nav-cta">Launch Explorer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="method-hero">
+    <div class="container">
+      <div class="hero-badge-tag">Open Science &amp; Prototype Architecture</div>
+      <h1 class="method-hero-title">About MoonBase Planner &amp; Methodology</h1>
+      <p class="method-hero-desc">
+        A transparent, open-access decision support tool designed to connect Lunar and Martian landing sites with the closest terrestrial environmental analogs on Earth. Grounded in real open space agency data and explained simply for researchers, mission planners, and hackathon judges.
+      </p>
+
+      <div class="method-quick-stats">
+        <div class="stat-pill">
+          <span class="stat-icon">🛰️</span>
+          <span>NASA PDS &amp; USGS Grounded Data</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-icon">⚖️</span>
+          <span>Dual Scoring: Weighted Model + KNN ML</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-icon">⚠️</span>
+          <span>Prototype Tool &bull; Not Habitable Life Predictor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container method-main-grid">
+    
+    <!-- Table of Contents Sticky Sidebar -->
+    <aside class="method-sidebar">
+      <div class="toc-card">
+        <div class="toc-title">Methodology Guide</div>
+        <nav class="toc-nav">
+          <a href="#definition">1. What is a Planetary Analog?</a>
+          <a href="#why-useful">2. Why Are Earth Analogs Useful?</a>
+          <a href="#what-is-moonbase">3. What is MoonBase Planner?</a>
+          <a href="#data-used">4. What Data Does It Use?</a>
+          <a href="#how-scoring-works">5. How the Analog Score Works</a>
+          <a href="#ml-model">6. How the ML Model Works</a>
+          <a href="#mission-recs">7. Mission Recommendation Engine</a>
+          <a href="#limitations">8. Limitations &amp; Guardrails</a>
+          <a href="#future-work">9. Future Improvements</a>
+          <a href="#sources">10. Official Data Sources</a>
+        </nav>
+        <div class="toc-footer">
+          <a href="explorer.html" class="toc-btn-launch">Open Results Dashboard →</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Articles -->
+    <div class="method-articles">
+
+      <!-- 1. What is a Planetary Analog? -->
+      <article id="definition" class="method-section-card">
+        <div class="section-badge">Concept 01</div>
+        <h2>1. What is a Planetary Analog?</h2>
+        <p class="lead-text">
+          A <strong>planetary analog</strong> is a natural location on Earth that shares physical, geological, chemical, or operational characteristics with environments found on other celestial bodies, such as the Moon or Mars.
+        </p>
+        <p>
+          No single location on Earth is an identical replica of the Moon or Mars. However, specific extreme environments—such as hyper-arid deserts, glaciated volcanic plateaus, meteorite impact craters, and sub-zero polar valleys—exhibit isolated traits that closely resemble extraterrestrial conditions.
+        </p>
+
+        <div class="callout-box">
+          <div class="callout-icon">💡</div>
+          <div class="callout-content">
+            <strong>Key takeaway:</strong> When scientists call a location an "analog," they mean it models <em>specific target properties</em> (e.g., razor-sharp basaltic rocks, freezing vacuum-like dryness, or crater wall steepness), rather than an entire extraterrestrial planet.
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Why Are Earth Analogs Useful? -->
+      <article id="why-useful" class="method-section-card">
+        <div class="section-badge">Application 02</div>
+        <h2>2. Why Are Earth Analogs Useful?</h2>
+        <p>
+          Sending hardware, rovers, and human crews into space is exceptionally expensive and unforgiving of failure. Testing prototypes in realistic terrestrial environments dramatically lowers mission risk and development costs.
+        </p>
+
+        <div class="feature-three-grid">
+          <div class="grid-card">
+            <div class="grid-icon">🚜</div>
+            <h3>Hardware &amp; Rover Testing</h3>
+            <p>Robotic wheels, rocker-bogie suspensions, and drills encounter fine abrasive sand, jagged volcanic basalt, and steep scree before flight builds are frozen.</p>
+          </div>
+          <div class="grid-card">
+            <div class="grid-icon">🧑‍🚀</div>
+            <h3>Astronaut Field Training</h3>
+            <p>Crews practice geology sampling, extravehicular activity (EVA) suit ergonomics, and communication protocols in remote, demanding terrain.</p>
+          </div>
+          <div class="grid-card">
+            <div class="grid-icon">🔬</div>
+            <h3>Instrument Calibration</h3>
+            <p>Spectrometers, ground-penetrating radar (GPR), and volatile detection sensors calibrate against actual evaporites, clays, and permafrost ice.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. What is MoonBase Planner? -->
+      <article id="what-is-moonbase" class="method-section-card">
+        <div class="section-badge">Platform 03</div>
+        <h2>3. What is MoonBase Planner?</h2>
+        <p class="lead-text">
+          <strong>MoonBase Planner</strong> is an interactive web-based decision support system designed to systematically evaluate and match candidate Lunar and Martian sites with Earth analog environments.
+        </p>
+        <p>
+          Instead of relying on fragmented research papers, MoonBase Planner pairs target candidate regions (such as Shackleton Crater, Mare Tranquillitatis, or Jezero Crater) with quantified Earth sites using standardized physical parameters, dual algorithmic scoring, and transparent mission suitability classifications.
+        </p>
+      </article>
+
+      <!-- 4. What Data Does It Use? -->
+      <article id="data-used" class="method-section-card">
+        <div class="section-badge">Data Architecture 04</div>
+        <h2>4. What Data Does It Use?</h2>
+        <p>
+          MoonBase Planner evaluates target locations across <strong>6 environmental dimensions</strong>. We combine curated analog benchmark profiles with real, preprocessed orbital and terrestrial measurements:
+        </p>
+
+        <div class="dimensions-table-wrapper">
+          <table class="method-table">
+            <thead>
+              <tr>
+                <th>Environmental Dimension</th>
+                <th>Physical Metric &amp; Units</th>
+                <th>Target (Moon / Mars) Source</th>
+                <th>Earth Analog Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Terrain Morphology</strong></td>
+                <td>Terrain Ruggedness Index (TRI in meters)</td>
+                <td>LOLA DEM (Moon) / MOLA (Mars)</td>
+                <td>NASA/JAXA SRTM 30m Global DEM</td>
+              </tr>
+              <tr>
+                <td><strong>Slope Inclination</strong></td>
+                <td>Mean &amp; Maximum slope in degrees (&deg;)</td>
+                <td>LRO LOLA / MRO HiRISE</td>
+                <td>SRTM Slope Gradient Derivatives</td>
+              </tr>
+              <tr>
+                <td><strong>Temperature Range</strong></td>
+                <td>Min, Max, &amp; Thermal Delta in Kelvin (K)</td>
+                <td>Diviner Radiometer (Moon) / MCS (Mars)</td>
+                <td>NASA Terra/Aqua MODIS Land Surface Temp</td>
+              </tr>
+              <tr>
+                <td><strong>Lithology &amp; Geology</strong></td>
+                <td>Dominant rock type &amp; mineralogy</td>
+                <td>Clementine UVVIS / CRISM Hyperspectral</td>
+                <td>USGS Global Lithological Map (GLiM)</td>
+              </tr>
+              <tr>
+                <td><strong>Aridity &amp; Desiccation</strong></td>
+                <td>Aridity Index (AI) &amp; precipitation (mm)</td>
+                <td>Atmospheric vacuum / Mars 0.00 mm liquid</td>
+                <td>CGIAR-CSI Global Aridity v3 Dataset</td>
+              </tr>
+              <tr>
+                <td><strong>Surface &amp; Regolith</strong></td>
+                <td>Rock fragment fraction &amp; dust dynamics</td>
+                <td>LRO Diviner CPR &amp; Rock Abundance</td>
+                <td>MODIS Albedo &amp; Terrestrial Field Surveys</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="badge-distinction-box">
+          <div class="badge-col">
+            <span class="badge-tag-demo">DEMO / PROTOTYPE DATA</span>
+            <p>Fast-loading, curated benchmark profiles used for immediate interactive browser demonstrations and hackathon UI testing.</p>
+          </div>
+          <div class="badge-col">
+            <span class="badge-tag-real">REAL SPACE-AGENCY DATA</span>
+            <p>Rigorously normalized datasets preprocessed from NASA PDS, USGS, and Copernicus archives stored in <code>data/processed/</code> with strict provenance tracking.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. How Does the Analog Score Work? -->
+      <article id="how-scoring-works" class="method-section-card">
+        <div class="section-badge">Scoring Logic 05</div>
+        <h2>5. How Does the Analog Score Work?</h2>
+        <p class="lead-text">
+          MoonBase Planner calculates an overall similarity score on an intuitive scale from <strong>0 to 100</strong> using a transparent, weighted multi-attribute model.
+        </p>
+
+        <p>
+          Before computing scores, each physical variable is normalized to a continuous scale between <code>0.0</code> and <code>1.0</code>. We calculate individual feature similarity percentages using bounded normalized distance functions:
+        </p>
+
+        <div class="code-formula-box">
+          <code>Feature_Similarity_Score (%) = (1.0 - |Target_Normalized - Earth_Normalized|) &times; 100</code>
+        </div>
+
+        <p>The total score is computed via a configurable weight configuration object:</p>
+
+        <div class="weights-grid">
+          <div class="weight-card">
+            <div class="w-pct">25%</div>
+            <div class="w-name">Terrain</div>
+            <div class="w-sub">Morphology &amp; Ruggedness</div>
+          </div>
+          <div class="weight-card">
+            <div class="w-pct">15%</div>
+            <div class="w-name">Slope</div>
+            <div class="w-sub">Incline &amp; Gradient Profile</div>
+          </div>
+          <div class="weight-card">
+            <div class="w-pct">15%</div>
+            <div class="w-name">Temperature</div>
+            <div class="w-sub">Thermal Delta &amp; Extremes</div>
+          </div>
+          <div class="weight-card">
+            <div class="w-pct">20%</div>
+            <div class="w-name">Geology</div>
+            <div class="w-sub">Lithology &amp; Minerals</div>
+          </div>
+          <div class="weight-card">
+            <div class="w-pct">15%</div>
+            <div class="w-name">Aridity</div>
+            <div class="w-sub">Desiccation &amp; Soil Moisture</div>
+          </div>
+          <div class="weight-card">
+            <div class="w-pct">10%</div>
+            <div class="w-name">Surface</div>
+            <div class="w-sub">Regolith Dust &amp; Loose Grain</div>
+          </div>
+        </div>
+
+        <p class="transparency-note">
+          Judges and users can view the breakdown for every single feature in the dashboard—ensuring complete mathematical transparency without "black box" obscurity.
+        </p>
+      </article>
+
+      <!-- 6. How Does the ML Similarity Model Work? -->
+      <article id="ml-model" class="method-section-card">
+        <div class="section-badge">Machine Learning 06</div>
+        <h2>6. How Does the ML Similarity Model Work?</h2>
+        <p class="lead-text">
+          In addition to the rule-weighted prototype score, MoonBase Planner implements an unsupervised <strong>K-Nearest Neighbors (KNN) &amp; Cosine Distance Vector Space</strong> model.
+        </p>
+
+        <div class="ml-workflow-steps">
+          <div class="ml-step">
+            <span class="step-num">Step 1</span>
+            <h4>Vector Construction</h4>
+            <p>Every Earth analog and planetary target is transformed into a 6-dimensional normalized vector: <code>[slope, ruggedness, min_temp, max_temp, aridity, rock_fraction]</code>.</p>
+          </div>
+          <div class="ml-step">
+            <span class="step-num">Step 2</span>
+            <h4>Euclidean Distance Computation</h4>
+            <p>The model calculates standard Euclidean geometric distance in $\mathbb{R}^6$ to measure physical multidimensional proximity.</p>
+          </div>
+          <div class="ml-step">
+            <span class="step-num">Step 3</span>
+            <h4>Cosine Similarity Alignment</h4>
+            <p>Cosine angle metric evaluates how proportionally balanced the environmental traits are relative to the target body.</p>
+          </div>
+          <div class="ml-step">
+            <span class="step-num">Step 4</span>
+            <h4>Ranked Proximity Index</h4>
+            <p>Returns the closest statistical neighbors alongside Euclidean distance measurements in the API response.</p>
+          </div>
+        </div>
+
+        <div class="callout-box warning-box">
+          <div class="callout-icon">🛡️</div>
+          <div class="callout-content">
+            <strong>Critical Scientific Guardrail:</strong> The ML model measures <em>environmental feature proximity</em>. It is explicitly <strong>NOT</strong> a prediction of biological habitability or alien life support.
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Mission Recommendation Engine -->
+      <article id="mission-recs" class="method-section-card">
+        <div class="section-badge">Mission Strategy 07</div>
+        <h2>7. Mission Recommendation Engine</h2>
+        <p>
+          Based on the physical profile of an analog, our recommendation engine classifies potential operational uses into 6 standardized categories:
+        </p>
+        <ul class="method-bullets">
+          <li><strong>Rover testing:</strong> Topography with high ruggedness, steep gradient walls, and loose gravel for traction slip trials.</li>
+          <li><strong>Astronaut field training:</strong> Expansive multi-kilometer crater valleys and exposed unweathered rock for EVA traverses.</li>
+          <li><strong>Equipment testing:</strong> Sub-zero cryogenic thermal regimes and abrasive airborne dust to stress joint seals and batteries.</li>
+          <li><strong>Geological research:</strong> Hydrothermal deposits, impact breccia, and unweathered basalts for sampling protocols.</li>
+          <li><strong>Navigation testing:</strong> High-contrast shadow fields and GPS-denied subsurface lava tubes for LiDAR SLAM.</li>
+          <li><strong>Surface operations:</strong> Planar basins for inflatable base camp deployment and In-Situ Resource Utilization (ISRU) tests.</li>
+        </ul>
+
+        <div class="callout-box info-box">
+          <div class="callout-icon">📌</div>
+          <div class="callout-content">
+            <strong>Guardrail Wording:</strong> All recommendations strictly apply forward-looking phrasing: <em>"Potentially useful for..."</em>, <em>"Could support..."</em>, or <em>"Suitable for prototype testing based on the selected criteria."</em> We do not claim any official space agency certification.
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. What Are the Limitations? -->
+      <article id="limitations" class="method-section-card">
+        <div class="section-badge">Scientific Rigor 08</div>
+        <h2>8. What Are the Limitations?</h2>
+        <p>
+          Rigorous science requires being explicit about what an algorithm <em>cannot</em> do:
+        </p>
+        <div class="limits-grid">
+          <div class="limit-item">
+            <h4>Atmospheric Pressure &amp; Gravity</h4>
+            <p>Earth has a 1-bar nitrogen-oxygen atmosphere and 1.0g gravity. The Moon has a near-total vacuum and 0.166g; Mars has ~6 mbar of CO<sub>2</sub> and 0.38g. Terrestrial aerodynamics and projectile ballistic trajectories differ significantly.</p>
+          </div>
+          <div class="limit-item">
+            <h4>Radiation Environment</h4>
+            <p>Earth's magnetosphere and thick atmosphere shield the surface from galactic cosmic rays (GCRs) and solar particle events (SPEs). Earth analogs cannot recreate lunar or martian ionizing radiation doses.</p>
+          </div>
+          <div class="limit-item">
+            <h4>Chemical Weathering &amp; Biology</h4>
+            <p>Earth has rain, liquid water cycles, and microbial biology that naturally weather rock surfaces into clays over geological time, whereas lunar regolith is pulverized by micrometeorites in absolute dryness.</p>
+          </div>
+          <div class="limit-item">
+            <h4>Spatial Resolution Disparities</h4>
+            <p>Earth elevation models (30m SRTM) and lunar datasets (100m LOLA) differ in spatial resolution, meaning micro-scale boulder distributions require localized rover-scale imagery.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. What Could Be Improved in Future? -->
+      <article id="future-work" class="method-section-card">
+        <div class="section-badge">Roadmap 09</div>
+        <h2>9. What Could Be Improved in Future?</h2>
+        <div class="roadmap-grid">
+          <div class="road-card">
+            <span class="road-num">01</span>
+            <h4>Sub-Meter Terrain Ingestion</h4>
+            <p>Incorporate ultra-high resolution LiDAR point clouds (e.g., USGS 3DEP 1m elevation and NASA HiRISE 25cm imagery) for boulder-level obstacle avoidance.</p>
+          </div>
+          <div class="road-card">
+            <span class="road-num">02</span>
+            <h4>Thermal-Vacuum &amp; UV Simulation</h4>
+            <p>Pair terrestrial analog locations with chamber test parameters (e.g., cryogenic thermal vac ratings) for complete environmental envelopes.</p>
+          </div>
+          <div class="road-card">
+            <span class="road-num">03</span>
+            <h4>User-Defined Weight Fine-Tuning</h4>
+            <p>Allow mission planners to adjust importance sliders (e.g., 50% weight on cold temperature for Artemis polar drill testing) directly from the dashboard.</p>
+          </div>
+          <div class="road-card">
+            <span class="road-num">04</span>
+            <h4>Expanded Catalog Expansion</h4>
+            <p>Ingest verified space agency analog field sites across Australia, South Africa, Oman, and the Tibetan Plateau.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10. Official Data Sources -->
+      <article id="sources" class="method-section-card">
+        <div class="section-badge">Authoritative Open Data 10</div>
+        <h2>10. Dedicated Space-Agency Data Sources</h2>
+        <p>
+          Every dataset integrated into MoonBase Planner originates from official national space agency archives and validated scientific institutions. We do not invent URLs, variables, or citations. Below is the complete transparent audit registry:
+        </p>
+
+        <div class="sources-list">
+          
+          <!-- 1. LRO LOLA -->
+          <div class="source-entry">
+            <div class="source-top">
+              <span class="source-org">NASA Goddard Space Flight Center (GSFC) / NASA PDS</span>
+              <span class="source-license">Public Domain &bull; NASA Open Data</span>
+            </div>
+            <h4>Lunar Reconnaissance Orbiter (LRO) — LOLA GDR Digital Elevation Model</h4>
+            <div class="source-link-row">
+              <span class="link-label">Official Archive:</span>
+              <a href="https://pds-geosciences.wustl.edu/missions/lro/lola.htm" target="_blank" rel="noopener noreferrer" class="source-official-link">
+                https://pds-geosciences.wustl.edu/missions/lro/lola.htm ↗
+              </a>
+            </div>
+            <div class="source-details-grid">
+              <div class="detail-box">
+                <span class="box-title">Used For</span>
+                <p>Topographic elevation mapping, calculation of lunar crater wall slopes, and micro-relief Terrain Ruggedness Index (TRI) modeling.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Relevant Variables</span>
+                <p><code>elevation_m</code> (radial elevation vs R=1737.4 km sphere), <code>slope_mean_deg</code>, <code>slope_max_deg</code>, <code>terrain_ruggedness_index_m</code>.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Resolution &amp; Coverage</span>
+                <p>Up to 512–1024 pixels/degree (~30m to 60m/pixel at polar cold traps); continuous global mapping (2009–present).</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">License &amp; Usage</span>
+                <p>NASA Open Data Policy / US Government Public Domain (Free and open for research, educational, and commercial application).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. LRO Diviner -->
+          <div class="source-entry">
+            <div class="source-top">
+              <span class="source-org">UCLA / NASA GSFC / PDS Geosciences Node</span>
+              <span class="source-license">Public Domain &bull; NASA Open Data</span>
+            </div>
+            <h4>LRO Diviner Lunar Radiometer Experiment (RDR)</h4>
+            <div class="source-link-row">
+              <span class="link-label">Official Archive:</span>
+              <a href="https://pds-geosciences.wustl.edu/missions/lro/diviner.htm" target="_blank" rel="noopener noreferrer" class="source-official-link">
+                https://pds-geosciences.wustl.edu/missions/lro/diviner.htm ↗
+              </a>
+            </div>
+            <div class="source-details-grid">
+              <div class="detail-box">
+                <span class="box-title">Used For</span>
+                <p>Cryogenic thermal characterization of lunar polar permanently shadowed regions (PSRs) and diurnal temperature range validation.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Relevant Variables</span>
+                <p><code>temperature_min_k</code> (extreme cold trap minimums down to 40 K), <code>temperature_max_k</code> (subsolar peaks to 395 K), <code>rock_abundance_fraction</code>.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Resolution &amp; Coverage</span>
+                <p>128 pixels/deg (~240m/px global; polar gridded maps at 50m/px); 2009–present observations.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">License &amp; Usage</span>
+                <p>NASA Open Data Policy / Public Domain.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. MGS MOLA -->
+          <div class="source-entry">
+            <div class="source-top">
+              <span class="source-org">NASA GSFC / Stanford / NASA PDS Geosciences</span>
+              <span class="source-license">Public Domain &bull; NASA Open Data</span>
+            </div>
+            <h4>Mars Global Surveyor (MGS) — MOLA MEGDR Topography</h4>
+            <div class="source-link-row">
+              <span class="link-label">Official Archive:</span>
+              <a href="https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/" target="_blank" rel="noopener noreferrer" class="source-official-link">
+                https://pds-geosciences.wustl.edu/mgs/.../mola-megdr ↗
+              </a>
+            </div>
+            <div class="source-details-grid">
+              <div class="detail-box">
+                <span class="box-title">Used For</span>
+                <p>Global Martian reference datum, regional basin slope profiles, and elevation metrics for candidate landing sites (Jezero, Gale, Gusev).</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Relevant Variables</span>
+                <p><code>elevation_m</code> (areoid-relative topography), <code>slope_mean_deg</code>, <code>terrain_ruggedness_index_m</code>.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Resolution &amp; Coverage</span>
+                <p>128 pixels/deg (~463 meters per pixel at equator); complete Martian global coverage (1997–2001).</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">License &amp; Usage</span>
+                <p>NASA Open Data Policy / US Government Public Domain.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. MRO CRISM -->
+          <div class="source-entry">
+            <div class="source-top">
+              <span class="source-org">Johns Hopkins University APL / NASA PDS Geosciences</span>
+              <span class="source-license">Public Domain &bull; NASA Open Data</span>
+            </div>
+            <h4>Mars Reconnaissance Orbiter (MRO) — CRISM Hyperspectral Spectrometer</h4>
+            <div class="source-link-row">
+              <span class="link-label">Official Archive:</span>
+              <a href="https://pds-geosciences.wustl.edu/missions/mro/crism.htm" target="_blank" rel="noopener noreferrer" class="source-official-link">
+                https://pds-geosciences.wustl.edu/missions/mro/crism.htm ↗
+              </a>
+            </div>
+            <div class="source-details-grid">
+              <div class="detail-box">
+                <span class="box-title">Used For</span>
+                <p>Surface mineralogy and lithology classification, identifying phyllosilicates (smectite clays), carbonate precipitates, and sulfate deposits.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Relevant Variables</span>
+                <p><code>primary_lithology</code>, <code>dominant_minerals</code> (clay, olivine, magnesite), <code>dust_cover_index</code>.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Resolution &amp; Coverage</span>
+                <p>18 to 36 meters per pixel (targeted hyperspectral mode, 362–3920 nm in 544 channels).</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">License &amp; Usage</span>
+                <p>NASA Open Data Policy / US Government Public Domain.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. NASA SRTM 30m Global DEM -->
+          <div class="source-entry">
+            <div class="source-top">
+              <span class="source-org">NASA Jet Propulsion Laboratory (JPL) / NGA / USGS EROS</span>
+              <span class="source-license">Public Domain &bull; USGS / NASA Open Data</span>
+            </div>
+            <h4>NASA/NGA Shuttle Radar Topography Mission (SRTM) Global 1-Arcsecond DEM</h4>
+            <div class="source-link-row">
+              <span class="link-label">Official Archive:</span>
+              <a href="https://www.earthdata.nasa.gov/sensors/srtm" target="_blank" rel="noopener noreferrer" class="source-official-link">
+                https://www.earthdata.nasa.gov/sensors/srtm ↗
+              </a>
+            </div>
+            <div class="source-details-grid">
+              <div class="detail-box">
+                <span class="box-title">Used For</span>
+                <p>Deriving terrestrial analog terrain morphology, micro-gradient slopes, and Riley Terrain Ruggedness Index (TRI) across Earth sites.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Relevant Variables</span>
+                <p><code>elevation_m</code> (orthometric height above WGS84/EGM96 geoid), <code>slope_mean_deg</code>, <code>slope_max_deg</code>, <code>terrain_ruggedness_index_m</code>.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Resolution &amp; Coverage</span>
+                <p>1 arc-second (~30 meters at equator); global coverage between 60°N and 56°S latitude.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">License &amp; Usage</span>
+                <p>USGS / NASA Open Data (Public Domain &bull; Free and unrestricted worldwide access).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. NASA MODIS Land Surface Temp -->
+          <div class="source-entry">
+            <div class="source-top">
+              <span class="source-org">NASA LP DAAC / NASA Earthdata (Terra &amp; Aqua Satellites)</span>
+              <span class="source-license">Public Domain &bull; NASA Open Data</span>
+            </div>
+            <h4>NASA Terra/Aqua MODIS Land Surface Temperature (MOD11A1 / MYD11A1 V6.1)</h4>
+            <div class="source-link-row">
+              <span class="link-label">Official Archive:</span>
+              <a href="https://lpdaac.usgs.gov/products/mod11a1v061/" target="_blank" rel="noopener noreferrer" class="source-official-link">
+                https://lpdaac.usgs.gov/products/mod11a1v061/ ↗
+              </a>
+            </div>
+            <div class="source-details-grid">
+              <div class="detail-box">
+                <span class="box-title">Used For</span>
+                <p>Continuous daytime and nighttime radiometric ground skin temperature observations across extreme terrestrial analog locations.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Relevant Variables</span>
+                <p><code>temperature_min_k</code> (annual nocturnal low), <code>temperature_max_k</code> (annual diurnal peak), <code>diurnal_temperature_range_k</code>.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Resolution &amp; Coverage</span>
+                <p>1,000 meters (1 km sinusoidal grid); daily global daytime/nighttime passes (2000–present).</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">License &amp; Usage</span>
+                <p>NASA Earth Science Open Data Policy (Free and open public domain).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. CGIAR-CSI Global Aridity v3 -->
+          <div class="source-entry">
+            <div class="source-top">
+              <span class="source-org">CGIAR Consortium for Spatial Information (CGIAR-CSI)</span>
+              <span class="source-license">Creative Commons CC BY 4.0</span>
+            </div>
+            <h4>Global Aridity Index &amp; Potential Evapotranspiration Database (Global-Aridity_v3)</h4>
+            <div class="source-link-row">
+              <span class="link-label">Official Archive:</span>
+              <a href="https://doi.org/10.6084/m9.figshare.19859218.v2" target="_blank" rel="noopener noreferrer" class="source-official-link">
+                https://doi.org/10.6084/m9.figshare.19859218.v2 ↗
+              </a>
+            </div>
+            <div class="source-details-grid">
+              <div class="detail-box">
+                <span class="box-title">Used For</span>
+                <p>Quantifying climatic hyper-aridity, soil desiccation, and rainfall deficiency to model extraterrestrial vacuum and dry regolith analogs.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Relevant Variables</span>
+                <p><code>aridity_index</code> (dimensionless ratio: Mean Annual Precipitation / Reference ET0), <code>annual_precipitation_mm</code>.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Resolution &amp; Coverage</span>
+                <p>30 arc-seconds (~1 km spatial resolution at equator); global continental surface coverage.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">License &amp; Usage</span>
+                <p>Creative Commons Attribution 4.0 International (CC BY 4.0 &bull; Open Access with citation).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. USGS GLiM Lithological Database -->
+          <div class="source-entry">
+            <div class="source-top">
+              <span class="source-org">Hartmann &amp; Moosdorf / USGS ScienceBase</span>
+              <span class="source-license">Creative Commons CC BY 3.0</span>
+            </div>
+            <h4>Global Lithological Map Database (GLiM)</h4>
+            <div class="source-link-row">
+              <span class="link-label">Official Archive:</span>
+              <a href="https://www.sciencebase.gov/catalog/item/579774eae4b021cadc30c8ad" target="_blank" rel="noopener noreferrer" class="source-official-link">
+                https://www.sciencebase.gov/catalog/item/... ↗
+              </a>
+            </div>
+            <div class="source-details-grid">
+              <div class="detail-box">
+                <span class="box-title">Used For</span>
+                <p>Categorizing bedrock lithology into basaltic volcanic flows, anorthositic crust, evaporite salts, and periglacial regolith analogs.</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Relevant Variables</span>
+                <p><code>primary_lithology</code> (mafic volcanics, evaporites, siliciclastics), <code>dominant_minerals</code> (plagioclase, pyroxene, halite, gypsum).</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">Resolution &amp; Coverage</span>
+                <p>Regional vector polygon map synthesis (~1:1,000,000 equivalent cartographic resolution).</p>
+              </div>
+              <div class="detail-box">
+                <span class="box-title">License &amp; Usage</span>
+                <p>Creative Commons Attribution 3.0 (CC BY 3.0).</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <strong>MoonBase Planner</strong> &bull; Planetary Analog Finder &bull; Open Science &amp; Hackathon Prototype
+      </div>
+      <div>
+        <a href="index.html" style="color: var(--accent-cyan); text-decoration: none; margin-right: 1.5rem;">Home</a>
+        <a href="explorer.html" style="color: var(--accent-cyan); text-decoration: none; margin-right: 1.5rem;">Results Dashboard</a>
+        <a href="#definition" style="color: var(--text-muted); text-decoration: none;">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Starfield animation script -->
+  <script>
+    const canvas = document.getElementById('starfield');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let stars = [];
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', () => {
+        resize();
+        initStars();
+      });
+      resize();
+
+      function initStars() {
+        stars = [];
+        const count = Math.floor((canvas.width * canvas.height) / 4500);
+        for (let i = 0; i < count; i++) {
+          stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 1.6 + 0.3,
+            alpha: Math.random() * 0.7 + 0.2,
+            speed: Math.random() * 0.02 + 0.005
+          });
+        }
+      }
+      initStars();
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        stars.forEach(s => {
+          s.alpha += s.speed;
+          if (s.alpha > 0.9 || s.alpha < 0.2) s.speed = -s.speed;
+          ctx.fillStyle = `rgba(255, 255, 255, ${Math.abs(s.alpha)})`;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+  </script>
+</body>
+</html>

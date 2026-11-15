@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results Dashboard — MoonBase Planner</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top App Navigation Bar -->
+  <header class="app-header">
+    <div class="header-content">
+      <div class="logo-area">
+        <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.85rem;" aria-label="MoonBase Planner Home">
+          <span class="logo-icon" aria-hidden="true">🪐</span>
+          <div>
+            <h1>MoonBase Planner</h1>
+            <div class="subtitle">Planetary Analog Finder &amp; Results Dashboard</div>
+          </div>
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="index.html" class="nav-header-link">← Home</a>
+        <a href="about.html" class="nav-header-link">📖 Methodology</a>
+        <a href="about.html#sources" class="nav-header-link">🛰️ Data Sources</a>
+        <span class="badge badge-analog">Results Dashboard</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Workflow Step Progress Breadcrumb -->
+  <nav class="workflow-breadcrumb-bar" aria-label="Analysis Process Steps">
+    <div class="workflow-breadcrumb-inner">
+      <div class="wf-step active" id="wf-step-1">
+        <span class="wf-num">1</span>
+        <span class="wf-title">Select Planet</span>
+      </div>
+      <div class="wf-arrow" aria-hidden="true">→</div>
+      <div class="wf-step active" id="wf-step-2">
+        <span class="wf-num">2</span>
+        <span class="wf-title">Select Region</span>
+      </div>
+      <div class="wf-arrow" aria-hidden="true">→</div>
+      <div class="wf-step" id="wf-step-3">
+        <span class="wf-num">3</span>
+        <span class="wf-title">Analyze</span>
+      </div>
+      <div class="wf-arrow" aria-hidden="true">→</div>
+      <div class="wf-step" id="wf-step-4">
+        <span class="wf-num">4</span>
+        <span class="wf-title">Find Earth Analogs</span>
+      </div>
+      <div class="wf-arrow" aria-hidden="true">→</div>
+      <div class="wf-step" id="wf-step-5">
+        <span class="wf-num">5</span>
+        <span class="wf-title">Compare</span>
+      </div>
+      <div class="wf-arrow" aria-hidden="true">→</div>
+      <div class="wf-step" id="wf-step-6">
+        <span class="wf-num">6</span>
+        <span class="wf-title">Explore Mission Uses</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Interactive Demo Mode Banner & Quick Scenario Launcher -->
+  <section class="demo-mode-container" aria-label="Hackathon Demo Scenarios">
+    <div class="demo-mode-inner">
+      <div class="demo-mode-header">
+        <div class="demo-badge-wrap">
+          <span class="demo-live-badge">🚀 DEMO MODE</span>
+          <span class="demo-notice-tag">Demonstration Scenarios Only &bull; Not Official NASA Findings</span>
+        </div>
+        <button id="btn-reset-demo" class="btn-reset-demo" type="button" title="Reset application to initial default state">
+          <span>↺ Reset Demo</span>
+        </button>
+      </div>
+
+      <div class="demo-scenarios-grid">
+        <!-- Scenario 1 -->
+        <button type="button" class="demo-scenario-btn" data-scenario="1" id="demo-btn-1">
+          <div class="scenario-number">SCENARIO 1</div>
+          <div class="scenario-title">🌙 Moon — Lunar South Pole</div>
+          <div class="scenario-desc">Shackleton Crater &bull; Cryogenic PSR cold traps &bull; Equipment &amp; volatile drills</div>
+        </button>
+
+        <!-- Scenario 2 -->
+        <button type="button" class="demo-scenario-btn" data-scenario="2" id="demo-btn-2">
+          <div class="scenario-number">SCENARIO 2</div>
+          <div class="scenario-title">🔴 Mars — Arid / Rocky Jezero</div>
+          <div class="scenario-desc">Jezero Crater &bull; Oxidized clay/sediment delta &bull; Rover mobility testing</div>
+        </button>
+
+        <!-- Scenario 3 -->
+        <button type="button" class="demo-scenario-btn" data-scenario="3" id="demo-btn-3">
+          <div class="scenario-number">SCENARIO 3</div>
+          <div class="scenario-title">❄️ Extreme Polar Environment</div>
+          <div class="scenario-desc">Polar ice-cemented regolith &bull; Astronaut field training &bull; Sub-zero logistics</div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Grid Dashboard -->
+  <main class="app-container">
+    
+    <!-- Left Column: Controls & Target Analysis Specs -->
+    <aside class="control-panel">
+      
+      <!-- 1. Planetary Body Selection: 2 Large Cards -->
+      <section class="card" aria-labelledby="step-1-title">
+        <div class="card-title" id="step-1-title">
+          <span>Step 1 &bull; Choose Target Planetary Body</span>
+          <span class="badge badge-sample">Demo Catalog</span>
+        </div>
+
+        <div class="planet-selector-grid">
+          <!-- Card 1: MOON -->
+          <div id="card-moon" class="planet-card moon-theme selected" data-planet="Moon" role="button" tabindex="0" aria-label="Select Moon as target">
+            <div class="planet-card-header">
+              <span class="planet-icon" aria-hidden="true">🌙</span>
+              <span class="planet-name">MOON</span>
+            </div>
+            <div class="planet-desc">Analyze potential lunar environments, cold traps &amp; lava tubes.</div>
+          </div>
+
+          <!-- Card 2: MARS -->
+          <div id="card-mars" class="planet-card mars-theme" data-planet="Mars" role="button" tabindex="0" aria-label="Select Mars as target">
+            <div class="planet-card-header">
+              <span class="planet-icon" aria-hidden="true">🔴</span>
+              <span class="planet-name">MARS</span>
+            </div>
+            <div class="planet-desc">Analyze Martian environments, paleolake deltas &amp; volcanic scarps.</div>
+          </div>
+        </div>
+
+        <!-- Planet Quick Toggle: [ Moon ] [ Mars ] -->
+        <div class="field-group">
+          <div class="field-label">
+            <span>Active Target Body</span>
+            <span class="sub" id="active-planet-label">Selected: Moon</span>
+          </div>
+          <div class="planet-pills" role="radiogroup" aria-label="Planetary Body Toggle">
+            <button type="button" class="pill-btn pill-moon active" data-planet="Moon" role="radio" aria-checked="true">
+              <span>🌙 Moon</span>
+            </button>
+            <button type="button" class="pill-btn pill-mars" data-planet="Mars" role="radio" aria-checked="false">
+              <span>🔴 Mars</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Target Region Selection: [ Select a region ] -->
+        <div class="field-group">
+          <div class="field-label">
+            <span>Step 2 &bull; Target Region</span>
+            <span class="sub" id="region-count-badge">3 Regions Available</span>
+          </div>
+          <div class="select-wrapper">
+            <select id="target-select" aria-label="Target Region">
+              <option value="" disabled selected>Select a region</option>
+              <!-- Dynamically populated based on chosen planet -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Mission Type Options: 6 buttons/chips -->
+        <div class="field-group">
+          <div class="field-label">
+            <span>Mission Objective Focus</span>
+            <span class="sub">Prioritize operational classification</span>
+          </div>
+          <div class="mission-type-grid" id="mission-type-container">
+            <button type="button" class="mission-chip active" data-mission="Rover testing">
+              <span><span class="mission-chip-icon">🚜</span>Rover Testing &amp; Mobility</span>
+              <span class="mission-chip-indicator"></span>
+            </button>
+            <button type="button" class="mission-chip" data-mission="Astronaut field training">
+              <span><span class="mission-chip-icon">🧑‍🚀</span>Astronaut Field Training</span>
+              <span class="mission-chip-indicator"></span>
+            </button>
+            <button type="button" class="mission-chip" data-mission="Equipment testing">
+              <span><span class="mission-chip-icon">⚙️</span>Equipment &amp; Drills</span>
+              <span class="mission-chip-indicator"></span>
+            </button>
+            <button type="button" class="mission-chip" data-mission="Geological research">
+              <span><span class="mission-chip-icon">🪨</span>Geological Research</span>
+              <span class="mission-chip-indicator"></span>
+            </button>
+            <button type="button" class="mission-chip" data-mission="Navigation testing">
+              <span><span class="mission-chip-icon">🧭</span>Navigation &amp; SLAM</span>
+              <span class="mission-chip-indicator"></span>
+            </button>
+            <button type="button" class="mission-chip" data-mission="Surface operations">
+              <span><span class="mission-chip-icon">📡</span>Surface Operations</span>
+              <span class="mission-chip-indicator"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Primary Action Button: "Find Earth Analogs" -->
+        <button id="btn-analyze" class="btn-primary" type="button" aria-label="Analyze target and find Earth analogs">
+          <span>🔍 Analyze &amp; Find Earth Analogs</span>
+        </button>
+
+        <!-- Transparency Disclaimer -->
+        <div class="demo-disclaimer">
+          ⚠️ <em>Prototype similarity model comparing normalized features. Grounded in peer-reviewed space agency data. Not official NASA AI.</em>
+        </div>
+      </section>
+
+      <!-- Target Region Characteristics Specs Card -->
+      <section class="card">
+        <div class="card-title">
+          <span>🔬 Target Specifications</span>
+          <span id="target-body-badge" class="badge badge-analog">MOON</span>
+        </div>
+
+        <div style="margin-bottom: 0.85rem;">
+          <h2 id="target-name-display" style="font-size: 1.15rem; font-weight: 700; color: #fff;">Select a Target Region</h2>
+        </div>
+
+        <div class="target-specs">
+          <div class="spec-item">
+            <span class="spec-label">Region / Basin:</span>
+            <span id="spec-region" class="spec-val">-</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Terrain:</span>
+            <span id="spec-terrain" class="spec-val">-</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Slope Profile:</span>
+            <span id="spec-slope" class="spec-val">-</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Thermal Range:</span>
+            <span id="spec-temp" class="spec-val">-</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Geology:</span>
+            <span id="spec-geology" class="spec-val">-</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Aridity:</span>
+            <span id="spec-aridity" class="spec-val">-</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Surface Conditions:</span>
+            <span id="spec-surface" class="spec-val">-</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Key Characteristics &amp; Traits</span>
+          <div id="target-traits" class="tags-row">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- Right Column: Results Dashboard (Hero Score, Features, Map & Ranked Analogs) -->
+    <section class="visual-panel">
+      
+      <!-- Loading State Overlay / Indicator -->
+      <div id="dashboard-loading-overlay" class="dashboard-status-overlay" style="display: none;">
+        <div class="loader-spinner"></div>
+        <div class="status-msg-title">Analyzing Planetary Analogs</div>
+        <div class="status-msg-sub">Querying FastAPI backend &bull; Calculating normalized multi-feature similarity...</div>
+      </div>
+
+      <!-- Error State Card with Retry Option -->
+      <div id="dashboard-error-card" class="dashboard-alert-card error-alert" style="display: none;">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-content">
+          <h4 class="alert-heading">Analysis Error</h4>
+          <p id="dashboard-error-msg" class="alert-text">Unable to complete analysis request to FastAPI backend.</p>
+          <button id="btn-retry-analysis" type="button" class="btn-retry">
+            <span>🔄 Retry Analysis</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Empty Results State Card -->
+      <div id="dashboard-empty-card" class="dashboard-alert-card empty-alert" style="display: none;">
+        <div class="alert-icon">🔍</div>
+        <div class="alert-content">
+          <h4 class="alert-heading">No Analog Matches Found</h4>
+          <p class="alert-text">No Earth analog locations met the matching threshold for this target criteria.</p>
+        </div>
+      </div>
+
+      <!-- Main Results Content Container -->
+      <div id="dashboard-results-content">
+        <!-- 1 & 2: Selected Target & Overall Analog Score Hero Card -->
+        <div id="results-hero-card" class="results-hero-card">
+        <div class="results-hero-grid">
+          <div>
+            <div class="target-header-meta">
+              <span id="hero-planet-pill" class="badge badge-analog" style="font-size: 0.72rem;">MOON TARGET</span>
+              <span id="hero-mission-badge" class="tag-pill" style="font-size: 0.72rem;">Focus: Rover Testing</span>
+            </div>
+            <h2 id="hero-target-title" class="target-hero-title">Moon — Shackleton Crater</h2>
+            <div id="hero-target-region" class="target-hero-sub">South Pole Basin &bull; Impact Crater &amp; PSR</div>
+            <p id="hero-target-desc" class="target-hero-desc">
+              Cryogenic cold trap characterized by permanent shadows, steep rim walls, and potential volatile ice reserves.
+            </p>
+          </div>
+
+          <!-- Large Score Circular Indicator -->
+          <div class="hero-score-block">
+            <div class="hero-score-circular">
+              <svg class="hero-score-svg" viewBox="0 0 100 100">
+                <circle class="hero-score-bg-circle" cx="50" cy="50" r="45"></circle>
+                <circle id="hero-score-circle" class="hero-score-fill-circle" cx="50" cy="50" r="45"></circle>
+              </svg>
+              <div class="hero-score-text-inner">
+                <span id="hero-score-num" class="hero-score-num">94</span>
+                <span class="hero-score-pct">%</span>
+              </div>
+            </div>
+            <div class="hero-score-details">
+              <span class="hero-match-label">Top Earth Analog Match</span>
+              <span id="hero-match-name" class="hero-match-name">Devon Island Crater</span>
+              <span id="hero-match-loc" class="hero-match-loc">📍 Canada &bull; Polar Impact Terrain</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Feature Comparison Progress Bars (Terrain, Slope, Temperature, Geology, Aridity, Surface Conditions) -->
+        <div style="margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--accent-cyan); letter-spacing: 0.06em;">
+              Normalized Feature Comparison (Moon/Mars vs Top Earth Analog)
+            </span>
+            <span style="font-size: 0.72rem; color: var(--text-dim);">Prototype Weighted Heuristic Model</span>
+          </div>
+
+          <div id="feature-comparison-container" class="feature-comparison-grid">
+            <!-- Dynamically populated 6 feature meter cards -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Interactive Earth Map (Leaflet.js) -->
+      <div class="card" style="padding: 1rem;">
+        <div class="card-title" style="margin-bottom: 0.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span>🌍 Interactive Planetary Analog Map (Leaflet.js)</span>
+            <span class="badge" style="background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); font-size: 0.65rem;">PROTOTYPE DATA</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <button id="btn-reset-view" type="button" class="badge" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-muted); cursor: pointer;" title="Reset Map View">Reset View</button>
+          </div>
+        </div>
+
+        <div id="earth-map"></div>
+
+        <div class="map-status-bar">
+          <div class="map-legend">
+            <span class="legend-item"><span class="legend-dot dot-high"></span> &ge; 90% (High Match)</span>
+            <span class="legend-item"><span class="legend-dot dot-mid"></span> 80–89% (Moderate Match)</span>
+            <span class="legend-item"><span class="legend-dot dot-low"></span> &lt; 80% (Baseline Match)</span>
+          </div>
+          <div class="map-demo-tag">
+            <span>⚠️ Prototype similarity model &bull; Click marker or row to inspect</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETAILED SIDE-BY-SIDE COMPARISON INTERFACE: LEFT (Moon/Mars) vs RIGHT (Earth Analog) -->
+      <div id="side-by-side-section" class="card side-by-side-card">
+        <div class="card-title" style="margin-bottom: 1.25rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span>⚖️ Detailed Side-by-Side Environmental Comparison</span>
+            <span class="badge badge-analog" style="font-size: 0.68rem;">Direct Feature Comparison</span>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-dim);">Selected Analog Inspection</div>
+        </div>
+
+        <!-- Top Overview Bar with Overall Analog Score and Explanation -->
+        <div class="side-by-side-overview-bar">
+          <div class="overview-header-pair">
+            <div class="overview-planet-label">
+              <span id="compare-left-icon">🌙</span>
+              <span id="compare-left-name" style="font-weight: 700; color: #fff;">Moon (Shackleton Crater)</span>
+            </div>
+            <div class="overview-vs-badge">VS</div>
+            <div class="overview-earth-label">
+              <span>🌍</span>
+              <span id="compare-right-name" style="font-weight: 700; color: var(--accent-cyan);">Earth Analog (Devon Island)</span>
+            </div>
+          </div>
+
+          <!-- Overall Score Badge & Synthesis Explanation -->
+          <div class="overview-score-box">
+            <div class="overview-score-circle">
+              <span id="compare-overall-score" class="overview-score-num">94</span>
+              <span class="overview-score-unit">%</span>
+            </div>
+            <div class="overview-score-meta">
+              <div class="overview-score-title">OVERALL ANALOG SCORE</div>
+              <p id="compare-synthesis-text" class="overview-synthesis-text">
+                "These environments are similar because..."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 Feature Comparison Side-by-Side Grid (Terrain, Slope, Temperature, Geology, Aridity, Surface Conditions) -->
+        <div id="side-by-side-features-grid" class="side-by-side-grid">
+          <!-- Dynamically populated 6 feature rows -->
+        </div>
+
+        <!-- Scientific Grounding Disclaimer -->
+        <div class="comparison-disclaimer">
+          ℹ️ <em>Prototype comparison note: Features and similarity scores are heuristic baseline approximations based on published open terrestrial and orbital literature. These comparisons do not represent official NASA mission validation.</em>
+        </div>
+      </div>
+
+      <!-- 4, 6 & 7: Top Earth Analog Locations Table with Explanations & Mission Applications -->
+      <div>
+        <div class="card-title" style="margin-bottom: 0.85rem;">
+          <span>🏆 Top Ranked Earth Analog Locations</span>
+          <span id="matches-count-label" style="font-size: 0.75rem; color: var(--text-muted); text-transform: none; font-weight: 500;">Ranked by multi-feature similarity index</span>
+        </div>
+
+        <div id="analogs-ranking-list" class="analog-ranking-container">
+          <!-- Dynamically populated ranked analog rows -->
+        </div>
+      </div>
+
+    </div> <!-- End #dashboard-results-content -->
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    MoonBase Planner — Planetary Analog Finder &bull; Hackathon Prototype Showcase &bull; FastAPI + Leaflet.js
+  </footer>
+
+  <!-- Leaflet.js -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Standalone Analog Map Loader Component -->
+  <script src="js/analog_map_loader.js"></script>
+
+  <!-- Main Explorer Application Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
