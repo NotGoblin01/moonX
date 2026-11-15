@@ -1,3 +1,4 @@
+
 # MoonBase Planner — Planetary Analog Finder & Results Dashboard
 
 An open-access decision support tool and hackathon prototype designed to identify, quantify, and map terrestrial environments on Earth that share physical, geological, and environmental characteristics with candidate exploration zones on the Moon and Mars.
@@ -148,3 +149,7 @@ The application is designed to be **zero-config** for local hackathon evaluation
 | **Frontend & Navigation** | **PASS** | Tested `index.html`, `explorer.html`, and `about.html`. Tested 6-step workflow breadcrumbs, interactive Leaflet Carto Dark map, Demo Mode buttons, and error retry handlers. |
 | **Security Audit** | **PASS** | Zero hardcoded API keys, private tokens, or secrets found. Strict Pydantic input validation on all payloads. |
 | **Responsiveness & UX** | **PASS** | Fully responsive layout tested down to mobile viewports ($<768\text{px}$) with `:focus-visible` accessibility support. |
+=======
+# MoonX
+Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars
+>>>>>>> faca87796b20b276318eb65f5b8358943b36fe78
